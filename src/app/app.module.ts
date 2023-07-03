@@ -18,13 +18,17 @@ import { MatInputModule } from '@angular/material/input';
 
 /*Angula material*/
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CardMediaSemestreComponent } from './Components/Cards/card-media-semestre/card-media-semestre.component';
+import { MatCardModule } from '@angular/material/card';
+import { EstudanteService } from './Services/estudante.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     BannerLogoComponent,
     PaginaPrincipalComponent,
-    FormularioComponent
+    FormularioComponent,
+    CardMediaSemestreComponent
   ],
   imports: [
     BrowserModule,
@@ -32,9 +36,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     MatInputModule,
     MatFormFieldModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule
   ],
-  providers: [],
+  providers: [EstudanteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
