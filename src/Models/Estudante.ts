@@ -6,23 +6,24 @@ export class Estudante {
   Status:number;
   CorStatus:string;
 
-  public constructor(){}
-
-  public EstudanteConstrutor(av1:number, av2:number, av3:number, edag:number){
+  //Construtor que atualiza o objeto
+  public constructor(av1:number, av2:number, av3:number, edag:number){
     this.Av1 = av1;
     this.Av2 = av2;
     this.Av3 = av3;
     this.Edag = edag;
-
     this.DefinirStatusEstudante();
   }
 
+  //Calcular a media do semestre
   public CalcularMediaSemestre():number{
-    if(!this.Av1 || !this.Av2 || !this.Av3 || !this.Edag) return -1;
+    if(this.Av1 < 0 || this.Av2 < 0 || this.Av3 < 0 || this.Edag < 0) return -1;
     let mediaSemestre = ((this.Av1 * 25) + (this.Av2 * 25) + (this.Av3 * 30) + (this.Edag * 20)) / 100
+
     return mediaSemestre;
   }
 
+  //Calcular a quantidade de pontos necessária para a prova final
   public CalcularNotaParaFinal():number{
     let mediaSemestre = this.CalcularMediaSemestre();
     if(mediaSemestre == -1 || mediaSemestre >= 7) return -1;
@@ -33,9 +34,10 @@ export class Estudante {
     return notaParaFinal;
   }
 
+  //Define o Status do estudante e a cor do status
   private DefinirStatusEstudante():void{
     let mediaSemestre = this.CalcularMediaSemestre();
-
+    console.log(mediaSemestre)
     //Aprovado (verde)
     if(mediaSemestre >= 7){
       this.Status = 1;
