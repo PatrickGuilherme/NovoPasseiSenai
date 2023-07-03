@@ -1,3 +1,4 @@
+
 <form class="form-global" [formGroup]="estudanteForm" (ngSubmit)="SubmitForm()">
     <div class="div-form">
        
@@ -84,12 +85,11 @@
     </div>
 </form>
 
-<div *ngIf="estudante" class="div-cards">
-    <!--<app-box-media 
-        [estudante]='estudante'>
-    </app-box-media>
+<div class="div-cards">
+    <app-card-media-semestre>
+    </app-card-media-semestre>
 
-    <app-box-media-final 
+    <!--<app-box-media-final 
         [estudante]='estudante' 
         *ngIf="estudante.Status == 2">
     </app-box-media-final>    

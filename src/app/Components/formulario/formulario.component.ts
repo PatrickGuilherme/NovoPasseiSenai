@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { EstudanteService } from 'src/app/Services/estudante.service';
 import { Estudante } from 'src/Models/Estudante';
 
 @Component({
@@ -11,8 +12,9 @@ export class FormularioComponent implements OnInit {
   public estudanteForm:FormGroup;
   public estudante:Estudante;
 
-  constructor(private formbuilder:FormBuilder) { }
-  
+  constructor(private formbuilder:FormBuilder, private estudanteService:EstudanteService) { }
+
+  //Inicializa o formulário
   ngOnInit(): void {
     this.estudanteForm = this.formbuilder.group({
       av1: ['', [Validators.required, Validators.pattern('[0-9]+([,\.][0-9]+)?'), Validators.min(0), Validators.max(10), Validators.maxLength(3)]],
@@ -34,15 +36,18 @@ export class FormularioComponent implements OnInit {
     return "";
   }
 
+  //Submissão do formulário
   public SubmitForm():void{
     if(this.estudanteForm.valid){
-      this.estudante = new Estudante();
-      this.estudante.EstudanteConstrutor(
+      this.estudante = new Estudante(
         parseFloat(this.estudanteForm.value.av1),
         parseFloat(this.estudanteForm.value.av2),
         parseFloat(this.estudanteForm.value.av3),
         parseFloat(this.estudanteForm.value.edag)
       );
+      
+      //Envia o objeto para o service atualizar
+      this.estudanteService.SetEstudante(this.estudante);
     }
   }
 }
