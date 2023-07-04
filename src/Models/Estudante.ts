@@ -1,3 +1,5 @@
+import Decimal from "decimal.js";
+
 export class Estudante {
   Av1: number;
   Av2: number;
@@ -18,9 +20,17 @@ export class Estudante {
   //Calcular a media do semestre
   public CalcularMediaSemestre():number{
     if(this.Av1 < 0 || this.Av2 < 0 || this.Av3 < 0 || this.Edag < 0) return -1;
-    let mediaSemestre = ((this.Av1 * 25) + (this.Av2 * 25) + (this.Av3 * 30) + (this.Edag * 20)) / 100
 
-    return mediaSemestre;
+    
+    
+    let mediaSemestre = Decimal.sum(
+      Decimal.mul(this.Av1 ,25),
+      Decimal.mul(this.Av2 ,25),
+      Decimal.mul(this.Av3 ,30),
+      Decimal.mul(this.Edag ,20)
+    ).div(100).toFixed(1);
+    
+    return parseFloat(mediaSemestre);
   }
 
   //Calcular a quantidade de pontos necessária para a prova final
@@ -28,10 +38,13 @@ export class Estudante {
     let mediaSemestre = this.CalcularMediaSemestre();
     if(mediaSemestre == -1 || mediaSemestre >= 7) return -1;
 
-    let notaParaFinal:number = ( 50 - 6 * mediaSemestre) / 4;
-    if(notaParaFinal > 10 ) return -1;
+    let operacaoMult = Decimal.mul(6,mediaSemestre);//Multiplicação
+    let operacaoSub = Decimal.sub(50, operacaoMult);//Subtração
+    let notaParaFinal = operacaoSub.div(4).toFixed(1);//Divisão e resultado final
 
-    return notaParaFinal;
+    if(parseFloat(notaParaFinal) > 10 ) return -1;
+
+    return parseFloat(notaParaFinal);
   }
 
   //Define o Status do estudante e a cor do status

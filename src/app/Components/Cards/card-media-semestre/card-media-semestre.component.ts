@@ -5,7 +5,7 @@ import { Estudante } from 'src/Models/Estudante';
 @Component({
   selector: 'app-card-media-semestre',
   templateUrl: './card-media-semestre.component.html',
-  styleUrls: ['../cards.css']
+  styleUrls: ['../cards.css','../tabela.css']
 })
 export class CardMediaSemestreComponent implements OnInit {
   private estudante:Estudante;

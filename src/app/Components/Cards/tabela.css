@@ -1,0 +1,20 @@
+/*Coisas de tabela*/
+.container-tabela{
+    height: 400px;
+    overflow: auto;
+}
+
+.tabela-base{
+    width: 100%;
+}
+
+td{
+    text-align: center;
+}
+
+.header-tabela{
+    text-align: center;
+    font-size: medium;
+    font-weight: 500;
+    color: var(--back);
+}

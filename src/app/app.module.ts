@@ -15,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 /*Importações para os inputs personalizados (instala o angula material)*/
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import {MatTableModule} from '@angular/material/table';
 
 /*Angula material*/
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -39,7 +40,8 @@ import { CardMediaTabelaComponent } from './Components/Cards/card-media-tabela/c
     MatInputModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule
   ],
   providers: [EstudanteService],
   bootstrap: [AppComponent]

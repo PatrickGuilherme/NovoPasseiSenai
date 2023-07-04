@@ -1,21 +1,32 @@
 <mat-card class="mainCard" *ngIf="VerifyEstudanteObj()">
     <mat-card-header class="headerCard">
-        <mat-card-title>Tabela Média - Prova Final</mat-card-title>
+        <div>
+            <mat-card-title>Tabela Média-Prova Final</mat-card-title>
+        </div>
     </mat-card-header>
     <mat-card-content class="bodyCard">
-        <table class="table">
-            <thead>
-            <tr style="text-align: center;">
-                <th scope="col">Média</th>
-                <th scope="col">Pontuação necessária</th>
-            </tr>
-            </thead>
-            <tbody *ngFor=" :">
-                <tr class="text-center">
-                    <td>AV1</td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
+        <p>
+            A tabela abaixo exibe a relação entre a média do semestre e a pontuação necessária 
+            que o estudante deve alcançar na avaliação final (Prova final) para aprovação em uma disciplina.
+        </p>
+        <section class="container-tabela mat-elevation-z8" tabindex="0">
+            <table mat-table [dataSource]="GetNotasTabela()" class="tabela-base">
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="mediaSemestre">
+                <th mat-header-cell *matHeaderCellDef class="header-tabela">Média Semestre</th>
+                <td mat-cell *matCellDef="let elemento"> {{elemento.Media}} </td>
+                </ng-container>
+            
+                <!-- Name Column -->
+                <ng-container matColumnDef="pontuacaoNecessaria">
+                <th mat-header-cell *matHeaderCellDef class="header-tabela">Pontuação necessária</th>
+                <td mat-cell *matCellDef="let elemento"> {{elemento.PontosParaFinal}} </td>
+                </ng-container>
+            
+                <tr mat-header-row *matHeaderRowDef="['mediaSemestre', 'pontuacaoNecessaria']; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: ['mediaSemestre', 'pontuacaoNecessaria'];"></tr>
+            </table>
+        </section>
     </mat-card-content>
 </mat-card> 
