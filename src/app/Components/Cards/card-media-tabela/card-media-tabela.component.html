@@ -1,0 +1,21 @@
+<mat-card class="mainCard" *ngIf="VerifyEstudanteObj()">
+    <mat-card-header class="headerCard">
+        <mat-card-title>Tabela Média - Prova Final</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="bodyCard">
+        <table class="table">
+            <thead>
+            <tr style="text-align: center;">
+                <th scope="col">Média</th>
+                <th scope="col">Pontuação necessária</th>
+            </tr>
+            </thead>
+            <tbody *ngFor=" :">
+                <tr class="text-center">
+                    <td>AV1</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </mat-card-content>
+</mat-card> 
