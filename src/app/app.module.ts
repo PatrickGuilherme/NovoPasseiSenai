@@ -21,6 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CardMediaSemestreComponent } from './Components/Cards/card-media-semestre/card-media-semestre.component';
 import { MatCardModule } from '@angular/material/card';
 import { EstudanteService } from './Services/estudante.service';
+import { CardMediaTabelaComponent } from './Components/Cards/card-media-tabela/card-media-tabela.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { EstudanteService } from './Services/estudante.service';
     BannerLogoComponent,
     PaginaPrincipalComponent,
     FormularioComponent,
-    CardMediaSemestreComponent
+    CardMediaSemestreComponent,
+    CardMediaTabelaComponent
   ],
   imports: [
     BrowserModule,
