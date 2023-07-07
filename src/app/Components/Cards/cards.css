@@ -48,12 +48,15 @@ p{
     justify-content: center;
 }
 
-
-
-
-
-
-
-
-
-
+/*Icone no card da tabela*/
+.div-tabela-imagem{
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.div-tabela-imagem img {
+    width: 60px; 
+    border-radius: 5px;
+}

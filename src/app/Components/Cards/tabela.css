@@ -12,9 +12,25 @@ td{
     text-align: center;
 }
 
+th{
+    position: sticky;
+    background-color: var(--white);
+    top: 0;
+}
 .header-tabela{
     text-align: center;
     font-size: medium;
     font-weight: 500;
     color: var(--back);
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    overflow-y: scroll;
+    background: var(--grey);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--blue);
+    border-radius: 10px;
 }
