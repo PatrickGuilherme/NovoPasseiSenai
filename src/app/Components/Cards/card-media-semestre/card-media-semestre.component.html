@@ -18,40 +18,7 @@
             (veja na tabela abaixo), é feito o somatório da notas multiplicando os
             pesos, e dividindo o resultado total por 100.
         </p>
-        <section class="container-tabela mat-elevation-z8" tabindex="0">
-            <table mat-table class="tabela-base">
-
-                <!-- Position Column -->
-                <ng-container matColumnDef="avaliacao">
-                    <th mat-header-cell class="header-tabela">Avaliação</th>
-                    <td mat-cell> AV1 </td>
-                    <td mat-cell> AV2 </td>
-                    <td mat-cell> AV3 </td>
-                    <td mat-cell> Edag </td>
-                </ng-container>
-            
-                <!-- Name Column -->
-                <ng-container matColumnDef="nota">
-                    <th mat-header-cell class="header-tabela">Nota</th>
-                    <td mat-cell> {{GetAv1()}} </td>
-                    <td mat-cell> {{GetAv2()}} </td>
-                    <td mat-cell> {{GetAv3()}} </td>
-                    <td mat-cell> {{GetAvEdag()}} </td>
-                </ng-container>
-            
-                <ng-container matColumnDef="Peso">
-                    <th mat-header-cell class="header-tabela">Peso(%)</th>
-                    <td mat-cell> 25% </td>
-                    <td mat-cell> 25% </td>
-                    <td mat-cell> 30% </td>
-                    <td mat-cell> 20% </td>
-                </ng-container>
-
-                <tr mat-header-row *matHeaderRowDef="['avaliacao', 'nota', 'Peso']; sticky: true"></tr>
-                <tr mat-row *matRowDef="let row; columns: ['avaliacao', 'nota', 'Peso'];"></tr>
-            </table>
-        </section>
-        <!--
+        
         <table class="table">
             <thead>
             <tr style="text-align: center;">
@@ -82,6 +49,6 @@
                 <td>20%</td>
                 </tr>
             </tbody>
-        </table>-->
+        </table>
     </mat-card-content>
 </mat-card> 
