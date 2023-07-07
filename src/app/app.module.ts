@@ -23,6 +23,7 @@ import { CardMediaSemestreComponent } from './Components/Cards/card-media-semest
 import { MatCardModule } from '@angular/material/card';
 import { EstudanteService } from './Services/estudante.service';
 import { CardMediaTabelaComponent } from './Components/Cards/card-media-tabela/card-media-tabela.component';
+import { CardProvaFinalComponent } from './Components/Cards/card-prova-final/card-prova-final.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { CardMediaTabelaComponent } from './Components/Cards/card-media-tabela/c
     PaginaPrincipalComponent,
     FormularioComponent,
     CardMediaSemestreComponent,
-    CardMediaTabelaComponent
+    CardMediaTabelaComponent,
+    CardProvaFinalComponent
   ],
   imports: [
     BrowserModule,

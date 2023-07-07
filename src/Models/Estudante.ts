@@ -21,16 +21,19 @@ export class Estudante {
   public CalcularMediaSemestre():number{
     if(this.Av1 < 0 || this.Av2 < 0 || this.Av3 < 0 || this.Edag < 0) return -1;
 
-    
-    
     let mediaSemestre = Decimal.sum(
       Decimal.mul(this.Av1 ,25),
       Decimal.mul(this.Av2 ,25),
       Decimal.mul(this.Av3 ,30),
       Decimal.mul(this.Edag ,20)
-    ).div(100).toFixed(1);
-    
-    return parseFloat(mediaSemestre);
+    ).div(100).toString();
+
+    const mediaSplit = mediaSemestre.split(".");
+    let mediaString;
+    if(mediaSplit.length > 1) mediaString = mediaSplit[0] + "." + mediaSplit[1][0];
+    else mediaString = mediaSemestre;
+
+    return parseFloat(mediaString);
   }
 
   //Calcular a quantidade de pontos necessária para a prova final
