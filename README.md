@@ -41,8 +41,8 @@ Uma aplicação de página única (SPA) que calcula a nota media do semestre de 
 <h2 id="prereq">📀 Pré-requisitos e como rodar a aplicação</h2>
 <!--Descrição do pré requisito de instalação na maquina em forma de passo a passo-->
 <ol>
-    <li>Instalar node 16.13.1</li>
-    <li>Instalar npm 8.1.2</li>
+    <li>Instalar node 16.16.0</li>
+    <li>Instalar npm 8.11.0</li>
     <li>Instalar angular CLI 13.0.3</li>
     <li>Com tudo instalado clone o repositório na sua máquina</li>
     <li>Abra a pasta do projeto no terminal e insirá <code>npm install</code>, instale a versão 8.1.2</li>
@@ -54,11 +54,11 @@ Uma aplicação de página única (SPA) que calcula a nota media do semestre de 
 <!--Descrição das tecnologias utilizadas (linguagem, biblioteca, framework etc)-->
 <p>As seguintes ferramentas foram utilizadas na construção do projeto:</p>
 <ul>
-    <li>Angular CLI 13</li>
+    <li>Angular CLI 13.0.4</li>
     <li>HTML 5</li>
     <li>CSS 3</li>
-    <li>Typescript</li>
-    <li>Angular Material</li>
+    <li>Typescript 4.4.4</li>
+    <li>Angular Material 13.3.9</li>
 </ul>
 
 
